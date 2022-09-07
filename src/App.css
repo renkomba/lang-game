@@ -13,7 +13,7 @@ body {
   text-align: center;
 }
 
-.App div {
+.App canvas {
   position: relative;
   width: 352px;
   height: 198px;

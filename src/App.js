@@ -3,10 +3,10 @@ import './App.css';
 import Grid from './components/Grid/Grid';
 import { useEffect, useRef, useState } from 'react';
 import CanvasContext from './contexts/CanvasContext';
+import Canvas from './components/Canvas/Canvas';
 
 function App() {
   const [ctx, setCtx] = useState(null);
-  // const CanvasContext = useContext(CanvasContext);
   const canvasRef = useRef(null);
 
   useEffect(
@@ -19,14 +19,19 @@ function App() {
     [setCtx]
   );
 
+  const draw = (ctx, src='') => {
+    let image = new Image();
+    image.src = src;
+    image.onload = () => ctx.drawImage(image, 0, 0);
+  }
   const [ width, height ] = [ 352, 198 ];
 
   return (
     <main className="App">
       <CanvasContext.Provider value={ctx}>
         <div>
-          <canvas
-            ref={canvasRef}
+          <Canvas draw={draw}
+            canvasRef={canvasRef}
             height={height}
             width={width}
           />
