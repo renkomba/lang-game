@@ -9,7 +9,7 @@ export const drawChar = (
     ctx, 
     src='', 
     cutFrom=[], 
-    cutTo=[], 
+    cutSize=[], 
     coordinates=[], 
     size=[]
 ) => {
@@ -19,7 +19,7 @@ export const drawChar = (
     char.onload = () => ctx.drawImage(
         char,
         cutFrom[0], cutFrom[1],
-        cutTo[0], cutTo[1],
+        cutSize[0], cutSize[1],
         x * 16, y * 16,
         size[0], size[1]
     );
