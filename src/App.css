@@ -13,15 +13,17 @@ body {
   text-align: center;
 }
 
-.App canvas {
+.App #game-container {
   position: relative;
   width: 352px;
   height: 198px;
-  outline: 1px dotted white;
   margin: 0 auto;
-  transform: scale(3) translateY(50%);
+
+  outline: 1px dotted white;
+  transform: scale(2.5) translateY(50%);
 }
 
-.App > div > canvas {
+.App canvas {
+  /* position: absolute; */
   image-rendering: pixelated;
 }
